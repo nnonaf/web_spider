@@ -1,5 +1,7 @@
 var Crawler = require("crawler");
 var $ = require('jQuery');
+
+
 // require("jsdom").env("", function(err, window) {
 //     if (err) {
 //         console.error(err);
@@ -23,11 +25,15 @@ var c = new Crawler({
             let res = page.match(/price/i);
             if(res && res.length > 0){
 
-                  console.log("kkkk")
+                //   console.log("kkkk")
                   const dom = new JSDOM(result.body);
                   let AllAtage = dom.window.document.querySelectorAll("a")
 
                   for (var i in Object.entries( AllAtage)){
+
+
+
+
                     console.log(Object.entries(AllAtage)[i][1].href);
                     // var key = Object.entries(p)[i][0];
                    
